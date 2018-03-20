@@ -9,7 +9,7 @@ def p_string1(S1, S2):
     S2_l = list(S2)
     if len(S1) != len(S2):
         return False
-    elif S1_l.sort() == S2_l.sort():
+    elif S1_l.sort() == S2_l.sort(): # TODO: はいここが駄目。アルファベットと数字が混ざるとソートできないからエラーになる。
         return True
 
 # p_string("dog ", "g od") > OK!
@@ -40,3 +40,30 @@ def p_string2(S1, S2):
 # text2="godnur"
 # print(p_string1(text1,text2))
 # print(p_string2(text1,text2))
+
+# 2018/3/16追記
+# 上の書き方はいけてない。
+import unittest
+class test(unittest.TestCase):
+    dataT = (
+        ('abcd', 'bacd'),
+        ('3563476', '7334566'),
+        ('wef34f', 'wffe34'),
+    )
+    dataF = (
+        ('abcd', 'd2cba'),
+        ('2354', '1234'),
+        ('dcw4f', 'dcw5f'),
+    )
+    def test_cp(self):
+        # true check
+        for test_strings in self.dataT:
+            result = p_string2(*test_strings)
+            self.assertTrue(result)
+        #false check
+        for test_strings in self.dataF:
+            result = p_string2(*test_strings)
+            self.assertFalse(result)
+
+if __name__ == "__main__":
+    unittest.main()
