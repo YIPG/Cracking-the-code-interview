@@ -12,7 +12,7 @@ def palindrome(string):
             pos = ord(char)
             counter[pos] += 1
         for count in counter:
-            if count%2==1:
+            if count % 2 == 1:
                 return False
         return True
     else:
@@ -25,5 +25,6 @@ def palindrome(string):
                 odd_counter += 1
         return(odd_counter == 1)
 
-text="abcdeffedcba"
+
+text = "abcdeffedcba"
 print(palindrome(text))
