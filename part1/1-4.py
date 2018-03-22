@@ -11,19 +11,13 @@ def palindrome(string):
         for char in string:
             pos = ord(char)
             counter[pos] += 1
-        if counter % 2 == 0:
-            return True
-        else:
-            return False
+        return(counter % 2 == 0)
     else:
         for char in string:
             pos = ord(char)
             counter[pos] += 1
-        odd_counter=0
+        odd_counter = 0
         for char in counter:
-            if char ==1:
-                odd_counter+=1
-        if odd_counter==1:
-            return True
-        else:
-            return False
+            if char == 1:
+                odd_counter += 1
+        return(odd_counter == 1)
