@@ -11,7 +11,10 @@ def palindrome(string):
         for char in string:
             pos = ord(char)
             counter[pos] += 1
-        return(counter % 2 == 0)
+        for count in counter:
+            if count%2==1:
+                return False
+        return True
     else:
         for char in string:
             pos = ord(char)
@@ -21,3 +24,6 @@ def palindrome(string):
             if char == 1:
                 odd_counter += 1
         return(odd_counter == 1)
+
+text="abcdeffedcba"
+print(palindrome(text))
