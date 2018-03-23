@@ -27,6 +27,7 @@ def arr_char(S1, S2):
                 return True
             S1_l = list(S1)
         return False
+    return False
 
 
 class Test(unittest.TestCase):
