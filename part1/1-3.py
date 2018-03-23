@@ -6,9 +6,9 @@ def URLify(S , length):
 
 
 # TODO:Test書かなあかん
-text = "google  ha sugoi kamo"
-L = len(text)
-print(URLify(text,L))
+# text = "google  ha sugoi kamo"
+# L = len(text)
+# print(URLify(text,L))
 
 # 3/21 テスト書いた
 class Test(unittest.TestCase):
@@ -19,10 +19,10 @@ class Test(unittest.TestCase):
         'kakuno%20mendo')
     ]
 
-    def test_urlify(self):
+    def test_URLify(self):
         for [test_string, length, answer] in self.data:
-            conv = URLify(test_string, length)
-            self.assertEqual(conv, answer)
+            actual = URLify(test_string, length)
+            self.assertEqual(actual, answer)
 
 
 if __name__ == "__main__":
